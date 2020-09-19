@@ -1,35 +1,27 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
     {% if title %}
-
     <title> {{ title}}</title>
-
     {% else %}
-
     <title> Welcome to the latest News website </title>
-
     {% endif %}
-
 </head>
-
 <body>
+
 
 {% extends 'base.html'%}
 {% import 'macros.html' as macro%}
-
 <!-- sources  -->
 {% block content %}
 
-
 <div>
     <h3> Latest News Sources</h3>
+
     <ul>
         {{ macro.displayNewsList(top)}}
 
@@ -39,8 +31,9 @@
 
 
 <div class="container">
+
     <form>
-        <input type="text" name="movie_query" placeholder="Search for a Movie" class="form-control">
+        <input type="text" name="everything_query" placeholder="Search for News" class="form-control">
         <input type="submit"  value="Submit" class="btn btn-default">
     </form>
 

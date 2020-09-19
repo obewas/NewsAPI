@@ -10,3 +10,4 @@ class NewsTest(unittest.TestCase):
         self.assertTrue(isinstance(self.new_news, News))
 
 
+

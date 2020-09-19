@@ -16,7 +16,9 @@ def get_news(category):
     '''
     Function that gets json response to our url request
     '''
-
+    print(base_url.format(category, api_key))
+    #import pdb;
+    #pdb.set_trace()
     get_news_url = base_url.format(category, api_key)
 
     with urllib.request.urlopen(get_news_url) as url:
@@ -37,7 +39,7 @@ def search_news(topic):
     Function to search for news by topic
     '''
 
-    search_news_url = "https://newsapi.org/v2/everything?q={}&apiKey={}".format(topic, api_key)
+    search_news_url = "https://newsapi.org/v2/search/everything?q={}&apiKey={}".format(topic, api_key)
 
     with urllib.request.urlopen(search_news_url) as url:
         search_news_data = url.read()
@@ -55,8 +57,8 @@ def sources_news():
     '''
     Function to search news sources
     '''
-    sources_url = "https:/newsapi.org/v2/sources?apiKey{}".format(api_key)
-
+    sources_url = "https:/newsapi.org/v2/sources?apiKey={}".format(api_key)
+    import pdb; pdb.set_trace()
     with urllib.request.urlopen(sources_url) as url:
         search_sources_data = url.read()
         search_sources_response = json.loads(search_sources_data)
@@ -87,9 +89,10 @@ def process_results(news_list):
         url = news_item.get("url")
         urlToImage = news_item.get("urlToImage")
         content = news_item.get("content")
+        publishedAt = news_item.get("publishedAt")
 
         if urlToImage:
-            news_object = News(author, title, description, url, urlToImage, content)
+            news_object = News(author, title, description, url, urlToImage, content, publishedAt)
             news_results.append(news_object)
 
     return news_results
