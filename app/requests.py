@@ -1,6 +1,7 @@
 
 import urllib.request,json
 from .models import News, Sources
+from newsapi import NewsApiClient
 
 
 # Getting app key
