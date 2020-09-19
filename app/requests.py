@@ -1,7 +1,8 @@
 
 import urllib.request,json
 from .models import News, Sources
-from newsapi import NewsApiClient
+from
+
 
 
 # Getting app key
@@ -11,6 +12,7 @@ def configure_request(app):
     global api_key,base_url
     api_key = app.config['NEWS_API_KEY']
     base_url = app.config['NEWS_API_BASE_URL']
+    newsapi = NewsApiClient(api_key)
 
 
 def get_news(category):
