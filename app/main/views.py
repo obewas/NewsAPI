@@ -38,4 +38,4 @@ def sources():
     sources = sources_news()
     title = f"{sources} news "
 
-    return render_template("sources.html", sources=sources)
+    return render_template("sources.html", sources=sources, title=title)
