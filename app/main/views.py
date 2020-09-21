@@ -19,7 +19,7 @@ def index():
     elif search_sources:
         return redirect(url_for(".sources", sources_name=search_sources))
     else:
-        return render_template('navbar.html', title=title, top=top_headlines)
+        return render_template('index.html', title=title, top=top_headlines)
 
 @main.route('/search/<everything>')
 def search(everything):
