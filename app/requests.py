@@ -19,7 +19,7 @@ def get_news(category):
     '''
     Function that gets json response to our url request
     '''
-    print(base_url.format(category, api_key))
+
     #import pdb;
     #pdb.set_trace()
     get_news_url = base_url.format(category, api_key)

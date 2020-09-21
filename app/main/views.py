@@ -29,7 +29,7 @@ def search(everything):
     searched_news = search_news(news_name_format)
     title = f"search results for {everything}"
 
-    return render_template('search.html',news=searched_news)
+    return render_template('search.html',news=searched_news,title=title)
 
 
 @main.route("/sources/",methods=["POST"])
@@ -38,4 +38,4 @@ def sources():
     sources = sources_news(q=keyword, language='en',country='us')
     title = f"{sources} news "
 
-    return render_template("sources.html", sources=sources['articles'])
+    return render_template("sources.html", sources=sources['articles'],title=title)
