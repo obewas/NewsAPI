@@ -17,7 +17,7 @@ def configure_request(app):
 
 def get_news(category):
     '''
-    Function that gets json response to our url request
+    Function that gets json response to the url request
     '''
 
     #import pdb;
